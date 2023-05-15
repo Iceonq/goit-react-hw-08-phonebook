@@ -1,5 +1,4 @@
 import { contactsReducer } from './contactsSlice';
-import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
 import {
   FLUSH,
@@ -8,9 +7,12 @@ import {
   PURGE,
   REGISTER,
   REHYDRATE,
+  persistStore,
+  persistReducer,
 } from 'redux-persist';
+import { authReducer } from './auth/slice';
 
-const { configureStore } = require('@reduxjs/toolkit');
+const { configureStore, getDefaultMiddleware } = require('@reduxjs/toolkit');
 
 const authPersistConfig = {
   key: 'auth',
@@ -18,16 +20,15 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
-const middleware = {
-  serializableCheck: {
-    ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-  },
-};
-
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     contacts: contactsReducer,
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(middleware),
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
+
+export const persistor = persistStore(store);
