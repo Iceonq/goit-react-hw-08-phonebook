@@ -1,15 +1,6 @@
 import { contactsReducer } from './contactsSlice';
 import storage from 'redux-persist/lib/storage';
-import {
-  FLUSH,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-  REHYDRATE,
-  persistStore,
-  persistReducer,
-} from 'redux-persist';
+import { persistStore, persistReducer } from 'redux-persist';
 import { authReducer } from './auth/slice';
 
 const { configureStore, getDefaultMiddleware } = require('@reduxjs/toolkit');

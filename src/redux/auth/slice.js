@@ -1,16 +1,43 @@
-const { createSlice } = require('@reduxjs/toolkit');
+import { register, login } from './operations';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   user: { name: null, emai: null },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  error: null,
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState: {},
-  extraReducers: {},
+  extraReducers: {
+    [register.fulfilled](state, action) {
+      // state.isRefreshing = false;
+    },
+    [register.pending](state, action) {
+      // state.isRefreshing = true;
+    },
+    [register.rejected](state, action) {
+      state.error = action.payload;
+      // state.isRefreshing = false;
+    },
+
+    [login.fulfilled](state, action) {
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+      state.isLoggedIn = true;
+      // state.isRefreshing = false;
+    },
+    [login.pending](state, action) {
+      // state.isRefreshing = true;
+    },
+    [login.rejected](state, action) {
+      state.error = action.payload;
+      // state.isRefreshing = false;
+    },
+  },
 });
 
 export const authReducer = authSlice.reducer;
