@@ -22,7 +22,7 @@ const App = () => {
   return (
     <div className={css.section}>
       <Routes>
-        <Route path="*" element={<Layout />}>
+        <Route path="*" element={<Layout component={<HomePage />} />}>
           <Route index element={<HomePage />} />
           <Route
             path="register"
