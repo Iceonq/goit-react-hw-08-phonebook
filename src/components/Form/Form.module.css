@@ -7,4 +7,27 @@
 
 .labeltitle {
   margin: 0;
+  font-weight: 400;
+}
+
+.formInput:focus {
+  background-color: #ff9800;
+}
+
+.label button {
+  width: 200px;
+  height: 30px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  margin-top: 15px;
+}
+
+.label button:hover {
+  background-color: #ff9800;
+}
+
+.header {
+  font-weight: 500;
+  font-size: 26px;
 }

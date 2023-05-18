@@ -3,6 +3,7 @@ import { deleteContact } from 'redux/operations';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { getContacts } from 'redux/selectors';
+import css from './ContactsList.module.css';
 
 export const ContactsList = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -25,14 +26,21 @@ export const ContactsList = () => {
 
   return (
     <div>
-      <h1>Contacts </h1>
+      <h1 className={css.header}>Contacts </h1>
       <p>Find contacts name</p>
-      <input value={searchTerm} onChange={handleFiltering} />
+      <input
+        value={searchTerm}
+        className={css.contactsListInput}
+        onChange={handleFiltering}
+      />
       {displayContacts.map(contact => {
         return (
-          <li name="contact" key={contact.id}>
+          <li name="contact" className={css.contactslistItem} key={contact.id}>
             {contact.name} : {contact.number}
-            <button onClick={() => handleContactDelete(contact.id)}>
+            <button
+              className={css.contactsListButton}
+              onClick={() => handleContactDelete(contact.id)}
+            >
               Delete
             </button>
           </li>

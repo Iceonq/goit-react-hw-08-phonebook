@@ -1,4 +1,4 @@
-import { register, login, refeshUser } from './operations';
+import { register, login, refeshUser, logout } from './operations';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -47,6 +47,14 @@ const authSlice = createSlice({
     },
     [refeshUser.rejected](state) {
       state.isRefreshing = false;
+    },
+    [logout.pending](state, action) {},
+    [logout.fulfilled](state, action) {
+      state.isLoggedIn = false;
+      state.isRefreshing = true;
+    },
+    [logout.rejected](state, action) {
+      state.error = action.payload;
     },
   },
 });

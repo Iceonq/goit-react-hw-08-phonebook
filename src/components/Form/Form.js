@@ -22,7 +22,7 @@ export const Form = () => {
 
   return (
     <form onSubmit={handleContactCreator}>
-      <h1>Phonebook</h1>
+      <h1 className={css.header}>Phonebook</h1>
       <label className={css.label}>
         <h3 className={css.labeltitle}>Name</h3>
         <input
@@ -33,6 +33,7 @@ export const Form = () => {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
+          className={css.formInput}
         />
         <h3 className={css.labeltitle}>Number</h3>
         <input
@@ -43,6 +44,7 @@ export const Form = () => {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
+          className={css.formInput}
         />
         <button type="submit">Add contact</button>
       </label>

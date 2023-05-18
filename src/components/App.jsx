@@ -9,6 +9,8 @@ import { RegisterPage } from 'pages/RegisterPage';
 import { ContactsPage } from 'pages/ContactsPage';
 import css from './App.module.css';
 import { refeshUser } from 'redux/auth/operations';
+import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,9 +24,30 @@ const App = () => {
       <Routes>
         <Route path="*" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="login" element={<LoginPage />} />
-          <Route path="register" element={<RegisterPage />} />
-          <Route path="contacts" element={<ContactsPage />} />
+          <Route
+            path="register"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<RegisterPage />}
+              />
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<LoginPage />}
+              />
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            }
+          />
         </Route>
       </Routes>
     </div>

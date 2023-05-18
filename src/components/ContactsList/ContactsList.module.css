@@ -1,0 +1,36 @@
+.header {
+  font-weight: 500;
+  font-size: 26px;
+}
+.contactsListInput:focus {
+  background-color: #ff9800;
+}
+
+.contactsListInput {
+  margin-bottom: 12px;
+}
+
+.contactslistItem {
+  list-style: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin-bottom: 5px;
+  border: 1px solid white;
+  padding: 10px;
+}
+
+.contactsListButton {
+  margin-left: 10px;
+  width: 52px;
+  height: 20px;
+  background-color: white;
+  border: 0;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.contactsListButton:hover {
+  background-color: #ff9800;
+}

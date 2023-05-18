@@ -1,11 +1,11 @@
+import phoneImage from '../images/phone.png';
+import css from './HomePage.module.css';
+
 export const HomePage = () => {
   return (
-    <div>This is homepage</div>
-    // <div>
-    //   <Form />
-    //   <ContactsList />
-    //   {isLoading && !error && <h4>Loading...</h4>}
-    //   {error && <h4>{error}</h4>}
-    // </div>
+    <div className={css.homePageContainer}>
+      <img src={phoneImage} className={css.homePageImage} alt="phonebook" />
+      <p className={css.homePageTitle}>PHONEBOOK</p>
+    </div>
   );
 };

@@ -1,0 +1,14 @@
+.homePageImage {
+  width: 700px;
+}
+
+.homePageTitle {
+  font-size: 70px;
+  font-weight: 700;
+  font-family: 'Mogra';
+}
+
+.homePageContainer {
+  display: flex;
+  align-items: center;
+}
