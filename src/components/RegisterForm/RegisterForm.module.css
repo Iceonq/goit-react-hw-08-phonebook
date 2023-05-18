@@ -1,0 +1,30 @@
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 70px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.registerForm button {
+  width: 200px;
+  height: 30px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  margin-top: 15px;
+}
+
+.registerForm input:focus {
+  background-color: #ff9800;
+}
+
+.registerForm button:hover {
+  background-color: #ff9800;
+}
+
+.registerForm label {
+  width: 200px;
+}

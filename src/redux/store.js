@@ -3,7 +3,7 @@ import storage from 'redux-persist/lib/storage';
 import { persistStore, persistReducer } from 'redux-persist';
 import { authReducer } from './auth/slice';
 
-const { configureStore, getDefaultMiddleware } = require('@reduxjs/toolkit');
+const { configureStore } = require('@reduxjs/toolkit');
 
 const authPersistConfig = {
   key: 'auth',

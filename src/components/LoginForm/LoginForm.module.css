@@ -1,0 +1,30 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 70px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.loginForm button {
+  width: 200px;
+  height: 30px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  margin-top: 15px;
+}
+
+.loginForm input:focus {
+  background-color: #ff9800;
+}
+
+.loginForm button:hover {
+  background-color: #ff9800;
+}
+
+.loginForm label {
+  width: 200px;
+}

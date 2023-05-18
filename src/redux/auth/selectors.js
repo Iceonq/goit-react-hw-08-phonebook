@@ -1,5 +1,3 @@
-import { useSelector } from 'react-redux';
-
-export const getUser = state => state.auth.user;
-export const getIsLoggedIn = state => state.auth.isLoggedIn;
-export const getError = state => state.auth.error;
+export const selectUser = state => state.auth.user;
+export const selectIsLoggedIn = state => state.auth.isLoggedIn;
+export const selectError = state => state.auth.error;
