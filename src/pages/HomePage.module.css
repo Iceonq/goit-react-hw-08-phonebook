@@ -1,5 +1,5 @@
 .homePageImage {
-  width: 700px;
+  width: 500px;
 }
 
 .homePageTitle {
@@ -11,4 +11,5 @@
 .homePageContainer {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
